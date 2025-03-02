@@ -1,0 +1,15 @@
+.ipynb_checkpoints/
+results/
+synthetic_formal_system/__pycache__/
+synthetic_formal_system/vanilla/__pycache__/
+synthetic_formal_system/vanilla/data/
+synthetic_formal_system/vanilla/answers/
+synthetic_formal_system/vanilla/.bash_history
+synthetic_formal_system/vanilla/.hf_token
+synthetic_formal_system/vanilla/.python_history
+synthetic_formal_system/vanilla/.viminfo
+synthetic_formal_system/vanilla/condor_outs
+synthetic_formal_system/vanilla/container.sifi
+*.tar.gz
+*.sif
+.idea/
