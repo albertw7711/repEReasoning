@@ -14,3 +14,6 @@ def is_trivial(cnf):
     if len(cnf) <= 2 and all(len(clause) == 1 for clause in cnf):
         return True
 
+    return False
+
+def is_formula_reusable(formula):

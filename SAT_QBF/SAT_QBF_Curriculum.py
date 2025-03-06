@@ -7,3 +7,7 @@ class SAT_QBF_Formula:
         self.is_qbf = is_qbf
 
         if is_qbf:
+            self.prefix = prefix if prefix else [('∃', v) for v in variables]
+        else:
+            self.prefix = [('∃', v) for v in variables]  # SAT default
+    
