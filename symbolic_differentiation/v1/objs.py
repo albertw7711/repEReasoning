@@ -39,3 +39,5 @@ class DifferentiatingRule:
         if isinstance(term_new, DifferentiableEquationNode):
             print()
         if isinstance(term_new, FunctionClass):
+            term_new = term_new(parent.symbol)
+        # term_new *= Utils.generate_random_nonzero_fraction()
