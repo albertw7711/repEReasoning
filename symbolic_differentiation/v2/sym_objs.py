@@ -22,3 +22,12 @@ class Node:
         self.is_out = is_out
         self.is_solved = is_solved
         self.deri = deri
+
+
+    @staticmethod
+    def create(p1, p2, rule):
+        node = Node(p1=p1, p2=p2, rule=rule)
+        node.sum_count = p1.sum_count + p2.sum_count
+        node.product_count = p1.product_count + p2.product_count
+        node.chain_count = p1.chain_count + p2.chain_count
+        match rule:

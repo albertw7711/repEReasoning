@@ -26,3 +26,16 @@ class DifferentiatingRule:
         if fns is None:
             fns = []
         self.rule_type = rule_type
+        self.weight = weight
+        self.fns = fns
+        self.is_poly = is_poly
+        self.is_reuse = is_reuse
+
+
+    def sum_apply_native(self, parent):
+        if self.is_poly:
+            self.fns[-1] = parent.symbol ** random.randint(1, 10)
+        term_new = random.choice(self.fns)
+        if isinstance(term_new, DifferentiableEquationNode):
+            print()
+        if isinstance(term_new, FunctionClass):
