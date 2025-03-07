@@ -6,3 +6,6 @@ class Utils:
     def is_symbolically_integrable(expr, symbol):
         try:
             result = integrate(expr, symbol, risch=True)
+            if result.has(Integral):
+                return False
+            return True

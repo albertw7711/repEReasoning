@@ -3,3 +3,5 @@ class SAT_QBF_Formula:
         self.variables = variables # ['x1', 'x2', ...]
         self.prefix = prefix # [('∃', 'x1'), ('∀', 'x2'), ...]
         self.cnf = cnf # List of clauses, e.g. [['x1', '¬x2'], ...]
+        self.parents = parents
+        self.is_qbf = is_qbf

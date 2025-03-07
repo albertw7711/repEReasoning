@@ -31,3 +31,5 @@ class Node:
         node.product_count = p1.product_count + p2.product_count
         node.chain_count = p1.chain_count + p2.chain_count
         match rule:
+            case 0:
+                node.expr = Add(p1.expr, p2.expr, evaluate=False)
