@@ -15,3 +15,7 @@ class SAT_QBF_Move:
     def apply(self, formula, move_name):
         assert move_name in self.move_registry, f"Unknown move: {move_name}"
         return self.move_registry[move_name](formula)
+    
+    def add_variable(self, formula):
+        """
+        Example input output:

@@ -41,3 +41,8 @@ class DifferentiatingRule:
         if isinstance(term_new, FunctionClass):
             term_new = term_new(parent.symbol)
         # term_new *= Utils.generate_random_nonzero_fraction()
+
+        child = deepcopy(parent)
+        child.sum_depth += 1
+        child.expression.append(term_new)
+        child.rule = self

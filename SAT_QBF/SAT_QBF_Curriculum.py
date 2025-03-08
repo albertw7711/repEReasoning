@@ -11,3 +11,7 @@ class SAT_QBF_Formula:
         else:
             self.prefix = [('∃', v) for v in variables]  # SAT default
     
+    def to_str(self):
+        """
+        example return: ∃ x1 ∃ x2 : (x1 ∨ x2) ∧ (¬x1 ∨ x2)
+        """
