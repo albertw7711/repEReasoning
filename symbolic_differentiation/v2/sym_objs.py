@@ -36,3 +36,6 @@ class Node:
                 node.level = p1.level + p2.level + 1
             case 1:
                 node.expr = Mul(p1.expr, p2.expr, evaluate=False)
+                node.level = 2**(p1.level+p2.level+1)
+            case 2:
+                if p1.expr.is_Function:
