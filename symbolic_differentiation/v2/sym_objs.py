@@ -33,3 +33,4 @@ class Node:
         match rule:
             case 0:
                 node.expr = Add(p1.expr, p2.expr, evaluate=False)
+                node.level = p1.level + p2.level + 1
