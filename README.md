@@ -5,3 +5,5 @@ This project provides a set of modular Python scripts and utilities for generati
 ## Features
 
 - Curriculum-based dataset generation across logic systems
+- Symbolic and syntactic verifiers for generated outputs
+- Modular and extensible design for adding new task types

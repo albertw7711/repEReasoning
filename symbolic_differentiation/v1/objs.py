@@ -46,3 +46,7 @@ class DifferentiatingRule:
         child.sum_depth += 1
         child.expression.append(term_new)
         child.rule = self
+        child.difficulty += self.weight
+        child.parent = parent
+        parent.children.append(child)
+        return child

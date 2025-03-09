@@ -34,3 +34,5 @@ class Node:
             case 0:
                 node.expr = Add(p1.expr, p2.expr, evaluate=False)
                 node.level = p1.level + p2.level + 1
+            case 1:
+                node.expr = Mul(p1.expr, p2.expr, evaluate=False)
