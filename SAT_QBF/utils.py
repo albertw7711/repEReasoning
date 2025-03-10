@@ -17,3 +17,6 @@ def is_trivial(cnf):
     return False
 
 def is_formula_reusable(formula):
+    hardness = formula.get_hardness()
+
+    if formula.is_qbf:

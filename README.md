@@ -10,3 +10,7 @@ This project provides a set of modular Python scripts and utilities for generati
 - Support for curriculum learning and formal grammars
 
 ## Project Structure
+
+- `Curriculum.py`, `Generator.py`, `Verifier.py`: Top-level generic task modules
+- `SAT_QBF/`, `lambda_calculus_reduction/`, `symbolic_differentiation/`, etc.: Task-specific generators and evaluators
+- `synthetic_formal_system/`: Formal system evaluation and prompt engineering utilities

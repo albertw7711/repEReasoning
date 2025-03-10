@@ -21,3 +21,6 @@ class SAT_QBF_Formula:
             prefix_str = " ".join([f"{q} {v}" for q, v in self.prefix])
             return f"{prefix_str} : {matrix_str}"
         else:
+            return matrix_str  # omit prefix for SAT
+    
+    def print_expression(self,):
