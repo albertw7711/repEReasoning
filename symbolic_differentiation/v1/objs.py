@@ -50,3 +50,11 @@ class DifferentiatingRule:
         child.parent = parent
         parent.children.append(child)
         return child
+
+    def sum_apply_reuse(self, parent):
+        node_new = random.choice(self.fns)
+        for i in range(len(node_new.expression)):
+            pass
+            # node_new.expression[i] *= Utils.generate_random_nonzero_fraction()
+        child = deepcopy(parent)
+        child.sum_depth += node_new.sum_depth

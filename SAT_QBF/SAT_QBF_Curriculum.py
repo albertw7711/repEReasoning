@@ -15,3 +15,9 @@ class SAT_QBF_Formula:
         """
         example return: ∃ x1 ∃ x2 : (x1 ∨ x2) ∧ (¬x1 ∨ x2)
         """
+        matrix_str = " ∧ ".join(["(" + " ∨ ".join(clause) + ")" for clause in self.cnf])
+        
+        if self.is_qbf:
+            prefix_str = " ".join([f"{q} {v}" for q, v in self.prefix])
+            return f"{prefix_str} : {matrix_str}"
+        else:

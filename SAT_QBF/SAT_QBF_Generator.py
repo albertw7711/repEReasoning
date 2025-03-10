@@ -23,3 +23,12 @@ class SAT_QBF_Generator(Generator):
             # Simple QBF prefix: ∃ x1 ∃ x2
             prefix = [('∃', 'x1'), ('∃', 'x2')]
         else:
+            # For SAT, use existential-only prefix (∃ for all vars, even if unused)
+            prefix = [('∃', v) for v in variables]
+
+        # Small CNF
+        cnf = self.generate_cnf(variables, num_clauses=2, clause_len=2)
+        return SAT_QBF_Formula(
+            variables=variables,
+            prefix=prefix,
+            cnf=cnf,
