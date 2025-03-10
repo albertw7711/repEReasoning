@@ -20,3 +20,5 @@ def is_formula_reusable(formula):
     hardness = formula.get_hardness()
 
     if formula.is_qbf:
+        return (
+            hardness["num_vars"] >= 2 and
