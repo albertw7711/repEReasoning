@@ -26,3 +26,4 @@ class DifferentiationGenerator(Generator):
         fns = []
         if is_trig:
             fns.extend(deepcopy(TRIGS))
+        if is_rec_trig:
