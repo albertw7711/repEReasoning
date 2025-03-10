@@ -24,3 +24,4 @@ class SAT_QBF_Formula:
             return matrix_str  # omit prefix for SAT
     
     def print_expression(self,):
+        expression_str = self.to_str()
