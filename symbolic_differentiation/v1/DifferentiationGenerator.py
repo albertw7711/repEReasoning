@@ -24,3 +24,5 @@ class DifferentiationGenerator(Generator):
                          is_product_wide=false, is_chain_wide=false,
                          is_batch: bool=false):
         fns = []
+        if is_trig:
+            fns.extend(deepcopy(TRIGS))
