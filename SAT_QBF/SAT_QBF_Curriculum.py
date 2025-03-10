@@ -25,3 +25,4 @@ class SAT_QBF_Formula:
     
     def print_expression(self,):
         expression_str = self.to_str()
+        print(expression_str)
