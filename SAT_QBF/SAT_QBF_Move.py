@@ -19,3 +19,16 @@ class SAT_QBF_Move:
     def add_variable(self, formula):
         """
         Example input output:
+
+        Input formula:
+        Variables: ['x1', 'x2']
+        CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2)
+
+        Output formula:
+        Variables: ['x1', 'x2', 'x3']
+        CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2) ∧ (¬x2 ∨ x3)
+        """
+        new_var = f"x{len(formula.variables) + 1}"
+        new_vars = formula.variables + [new_var]
+
+        new_prefix = formula.prefix + [('∃', new_var)] if formula.is_qbf else [('∃', v) for v in new_vars]

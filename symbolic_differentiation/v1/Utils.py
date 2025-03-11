@@ -9,3 +9,8 @@ class Utils:
             if result.has(Integral):
                 return False
             return True
+        except:
+            return False
+
+    @staticmethod
+    def generate_random_nonzero_fraction(min_val=-100, max_val=100):

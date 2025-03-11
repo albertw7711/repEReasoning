@@ -18,3 +18,8 @@ class SAT_QBF_Generator(Generator):
         return [self.generate_clause(variables, clause_len) for _ in range(num_clauses)]
 
     def create_base_formula(self,):
+        variables = ["x1", "x2"]
+        if self.is_qbf:
+            # Simple QBF prefix: ∃ x1 ∃ x2
+            prefix = [('∃', 'x1'), ('∃', 'x2')]
+        else:
