@@ -32,3 +32,5 @@ class SAT_QBF_Move:
         new_vars = formula.variables + [new_var]
 
         new_prefix = formula.prefix + [('∃', new_var)] if formula.is_qbf else [('∃', v) for v in new_vars]
+
+        new_clause = [
