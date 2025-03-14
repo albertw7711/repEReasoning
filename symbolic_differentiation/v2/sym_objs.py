@@ -39,3 +39,17 @@ class Node:
                 node.level = 2**(p1.level+p2.level+1)
             case 2:
                 if p1.expr.is_Function:
+                    node.expr = p1.expr.func(p2.expr, evaluate=False)
+                    node.level = (p2.level+1)*2
+        p1.children.append(node)
+        p2.children.append(node)
+        return node
+
+
+class Step:
+    def __init__(self, rule, target, u, v, sol=None):
+        self.rule = rule
+        self.target = target
+        self.u = u
+        self.v = v
+        self.sol = sol
