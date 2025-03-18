@@ -45,3 +45,4 @@ class SAT_QBF_Generator(Generator):
         generated_hashes = set()
 
         # Step 1: Base formula
+        current = self.create_base_formula()
