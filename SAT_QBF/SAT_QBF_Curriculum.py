@@ -39,3 +39,4 @@ class SAT_QBF_Formula:
             return 0
 
         count = 0
+        prev_q = prefix[0][0]
