@@ -34,3 +34,8 @@ class SAT_QBF_Move:
         new_prefix = formula.prefix + [('∃', new_var)] if formula.is_qbf else [('∃', v) for v in new_vars]
 
         new_clause = [
+            random.choice(['', '¬']) + random.choice(new_vars),
+            random.choice(['', '¬']) + new_var
+        ]
+
+        new_cnf = formula.cnf + [new_clause]

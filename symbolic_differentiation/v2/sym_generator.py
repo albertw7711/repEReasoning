@@ -45,3 +45,10 @@ class SymDifferentiationGenerator:
                 fn = fn ** random.randint(-100, 100)
             deri = diff(fn, self.symbol)
             node = Node(p1=None, p2=None, rule=None, expr=fn, deri=deri)
+            gen_level0.append(node)
+        out_level0 = random.sample(gen_level0, k=self.section_length)
+        for node in out_level0:
+            node.is_out = True
+            node.is_solved = True
+        self.generating_db.append(gen_level0)
+        self.output_db.append(out_level0)

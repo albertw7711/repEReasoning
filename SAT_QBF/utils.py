@@ -22,3 +22,8 @@ def is_formula_reusable(formula):
     if formula.is_qbf:
         return (
             hardness["num_vars"] >= 2 and
+            hardness["alt_depth"] >= 1 and
+            not is_trivial(formula.cnf)  # optional
+        )
+    else:  # SAT
+        return (
