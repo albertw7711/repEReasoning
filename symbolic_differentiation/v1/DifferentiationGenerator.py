@@ -27,3 +27,17 @@ class DifferentiationGenerator(Generator):
         if is_trig:
             fns.extend(deepcopy(TRIGS))
         if is_rec_trig:
+            fns.extend(deepcopy(REC_TRIGS))
+        if is_inv_trig:
+            fns.extend(deepcopy(INV_TRIGS))
+        if is_inv_rec_trig:
+            fns.extend(deepcopy(INV_REC_TRIGS))
+        if is_exp:
+            fns.append(exp)
+        if is_log:
+            fns.append(log)
+        if is_poly:
+            fns.append(Symbol('x'))
+        sum_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.SUM, RULE_WEIGHTS[
+            ReverseDifferentiatingRuleType.SUM.value[0]], fns, is_poly)
+        if is_product_wide:

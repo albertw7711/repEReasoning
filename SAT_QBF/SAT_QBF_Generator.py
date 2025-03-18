@@ -32,3 +32,16 @@ class SAT_QBF_Generator(Generator):
             variables=variables,
             prefix=prefix,
             cnf=cnf,
+            parents=[],
+            is_qbf=self.is_qbf
+        )
+
+    
+    def generate_theorem(self):
+        pass
+    
+    def generate_curriculum(self, n_formulas, max_hardness):
+        curriculum = SAT_QBF_Curriculum()
+        generated_hashes = set()
+
+        # Step 1: Base formula

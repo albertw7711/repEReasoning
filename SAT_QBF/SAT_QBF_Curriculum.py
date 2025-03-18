@@ -26,3 +26,15 @@ class SAT_QBF_Formula:
     def print_expression(self,):
         expression_str = self.to_str()
         print(expression_str)
+    
+    def count_alternations(self, prefix):
+        """
+        Count the number of quantifier alternations in a QBF prefix.
+        
+        Example:
+        Input: [('∃', 'x1'), ('∃', 'x2'), ('∀', 'x3'), ('∃', 'x4')]
+        Output: 2  (∃ → ∀, ∀ → ∃)
+        """
+        if not prefix:
+            return 0
+
