@@ -39,3 +39,6 @@ class SAT_QBF_Move:
         ]
 
         new_cnf = formula.cnf + [new_clause]
+
+        return SAT_QBF_Formula(
+            variables=new_vars,

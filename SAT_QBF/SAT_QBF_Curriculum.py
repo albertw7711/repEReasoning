@@ -38,3 +38,4 @@ class SAT_QBF_Formula:
         if not prefix:
             return 0
 
+        count = 0

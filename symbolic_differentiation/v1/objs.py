@@ -58,3 +58,4 @@ class DifferentiatingRule:
             # node_new.expression[i] *= Utils.generate_random_nonzero_fraction()
         child = deepcopy(parent)
         child.sum_depth += node_new.sum_depth
+        if node_new.product_depth > child.product_depth:
