@@ -64,3 +64,4 @@ class SymDifferentiationGenerator:
                     num_sum = self.section_length*2 - num_product - num_chain
                 else:
                     num_product = 0
+                    num_chain = floor(0.5 * self.section_length*2)
