@@ -47,3 +47,4 @@ class SAT_QBF_Generator(Generator):
         # Step 1: Base formula
         current = self.create_base_formula()
         curriculum.append_node(current)
+        generated_hashes.add(current.to_str())
