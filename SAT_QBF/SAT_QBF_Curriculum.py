@@ -48,3 +48,4 @@ class SAT_QBF_Formula:
 
         return count
 
+    def get_hardness(self):
