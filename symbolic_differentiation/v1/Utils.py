@@ -14,3 +14,4 @@ class Utils:
 
     @staticmethod
     def generate_random_nonzero_fraction(min_val=-100, max_val=100):
+        while True:
