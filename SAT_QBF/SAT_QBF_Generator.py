@@ -48,3 +48,10 @@ class SAT_QBF_Generator(Generator):
         current = self.create_base_formula()
         curriculum.append_node(current)
         generated_hashes.add(current.to_str())
+
+        # Step 2: Climb phase — reach max_hardness
+        while current.get_hardness() != max_hardness:
+            moves = valid_moves(current.get_hardness(), max_hardness)
+            if not moves:
+                break  # can't increase further
+            move = random.choice(moves)
