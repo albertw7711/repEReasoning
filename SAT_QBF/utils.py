@@ -27,3 +27,4 @@ def is_formula_reusable(formula):
         )
     else:  # SAT
         return (
+            hardness["num_vars"] >= 2 and
