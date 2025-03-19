@@ -20,3 +20,5 @@ class Utils:
             if numerator != 0 and denominator != 0:
                 return Rational(numerator, denominator)
 
+    @staticmethod
+    def sort_by_weighted_sum(array, weights):

@@ -58,3 +58,4 @@ class SAT_QBF_Generator(Generator):
             next_formula = apply_move(current, move)
 
             # check for uniqueness
+            if next_formula.to_str() in generated_hashes:
