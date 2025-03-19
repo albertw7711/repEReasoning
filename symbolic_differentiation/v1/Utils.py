@@ -22,3 +22,5 @@ class Utils:
 
     @staticmethod
     def sort_by_weighted_sum(array, weights):
+        if any(len(sub) != len(weights) for sub in array):
+            raise ValueError("Each sub-array must match the length of the weights list.")
