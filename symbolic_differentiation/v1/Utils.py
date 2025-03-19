@@ -15,3 +15,8 @@ class Utils:
     @staticmethod
     def generate_random_nonzero_fraction(min_val=-100, max_val=100):
         while True:
+            numerator = random.randint(min_val, max_val)
+            denominator = random.randint(min_val, max_val)
+            if numerator != 0 and denominator != 0:
+                return Rational(numerator, denominator)
+

@@ -55,3 +55,6 @@ class SAT_QBF_Generator(Generator):
             if not moves:
                 break  # can't increase further
             move = random.choice(moves)
+            next_formula = apply_move(current, move)
+
+            # check for uniqueness
