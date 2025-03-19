@@ -40,3 +40,5 @@ class SAT_QBF_Formula:
 
         count = 0
         prev_q = prefix[0][0]
+        
+        for q, _ in prefix[1:]:

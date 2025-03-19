@@ -61,3 +61,5 @@ class DifferentiatingRule:
         if node_new.product_depth > child.product_depth:
             child.product_depth = node_new.product_depth
             child.product_term = len(child.expression) + node_new.product_term
+        child.chain_depth = max(child.chain_depth, node_new.chain_depth)
+        for expr1 in node_new.expression:

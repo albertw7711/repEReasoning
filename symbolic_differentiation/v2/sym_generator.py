@@ -57,3 +57,7 @@ class SymDifferentiationGenerator:
         current_level = 1
         while current_level < self.level_max:
             gen_levelc = []
+            if current_level % 2 == 0:
+                if current_level & (current_level-1) == 0:
+                    num_product = floor(0.6 * self.section_length*2)
+                    num_chain = floor(0.3 * self.section_length*2)
