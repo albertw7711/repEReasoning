@@ -50,3 +50,6 @@ class DifferentiationGenerator(Generator):
         if is_chain_wide:
             chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.WIDE_CHAIN,
                                              RULE_WEIGHTS[
+                ReverseDifferentiatingRuleType.WIDE_CHAIN.value[0]], fns, is_poly)
+        else:
+            chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.CHAIN, RULE_WEIGHTS[

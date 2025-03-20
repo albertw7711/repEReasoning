@@ -63,3 +63,6 @@ class DifferentiatingRule:
             child.product_term = len(child.expression) + node_new.product_term
         child.chain_depth = max(child.chain_depth, node_new.chain_depth)
         for expr1 in node_new.expression:
+            if isinstance(expr1, DifferentiableEquationNode):
+                print()
+        child.expression.extend(node_new.expression)

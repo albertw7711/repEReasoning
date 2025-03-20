@@ -42,3 +42,9 @@ class SAT_QBF_Formula:
         prev_q = prefix[0][0]
         
         for q, _ in prefix[1:]:
+            if q != prev_q:
+                count += 1
+                prev_q = q
+
+        return count
+
