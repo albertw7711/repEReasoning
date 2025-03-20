@@ -59,3 +59,5 @@ class DifferentiatingRule:
         child = deepcopy(parent)
         child.sum_depth += node_new.sum_depth
         if node_new.product_depth > child.product_depth:
+            child.product_depth = node_new.product_depth
+            child.product_term = len(child.expression) + node_new.product_term

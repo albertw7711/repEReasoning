@@ -41,3 +41,5 @@ class DifferentiationGenerator(Generator):
         sum_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.SUM, RULE_WEIGHTS[
             ReverseDifferentiatingRuleType.SUM.value[0]], fns, is_poly)
         if is_product_wide:
+            product_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.WIDE_PRODUCT,
+                                               RULE_WEIGHTS[

@@ -42,3 +42,5 @@ class SAT_QBF_Move:
 
         return SAT_QBF_Formula(
             variables=new_vars,
+            prefix=new_prefix,
+            cnf=new_cnf,
