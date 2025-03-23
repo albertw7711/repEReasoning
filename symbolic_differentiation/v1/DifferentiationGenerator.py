@@ -54,3 +54,7 @@ class DifferentiationGenerator(Generator):
         else:
             chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.CHAIN, RULE_WEIGHTS[
                 ReverseDifferentiatingRuleType.CHAIN.value[0]], fns, is_poly)
+        rules = [sum_rule, product_rule, chain_rule]
+        if not fns:
+            print("No fns defined")
+            return None
