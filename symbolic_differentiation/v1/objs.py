@@ -69,3 +69,10 @@ class DifferentiatingRule:
         child.rule = self
         child.difficulty += self.weight
         child.parent = parent
+        parent.children.append(child)
+        return child
+
+    def product_apply(self, parent, is_wide=false):
+        child_product_term = parent.product_term
+        child_product_depth = parent.product_depth
+        if is_wide:

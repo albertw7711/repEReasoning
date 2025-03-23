@@ -37,3 +37,4 @@ class Utils:
 
         # Assign higher weight to the first half
         weights = [2 if i <= line else 1 for i in values]
+        return random.choices(values, weights=weights, k=1)[0]

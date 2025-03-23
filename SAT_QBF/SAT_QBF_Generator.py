@@ -61,3 +61,8 @@ class SAT_QBF_Generator(Generator):
             if next_formula.to_str() in generated_hashes:
                 continue
 
+            curriculum.append_node(next_formula)
+            generated_hashes.add(next_formula.to_str())
+            current = next_formula
+
+            if len(curriculum.derivation_tree) == n_formulas:
