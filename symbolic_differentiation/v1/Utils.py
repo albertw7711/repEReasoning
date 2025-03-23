@@ -24,3 +24,8 @@ class Utils:
     def sort_by_weighted_sum(array, weights):
         if any(len(sub) != len(weights) for sub in array):
             raise ValueError("Each sub-array must match the length of the weights list.")
+
+        return sorted(array, key=lambda row: sum(x * w for x, w in zip(row, weights)))
+
+    @staticmethod
+    def easy_skewed_randint(lower_bound, upper_bound):

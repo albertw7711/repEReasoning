@@ -66,3 +66,6 @@ class DifferentiatingRule:
             if isinstance(expr1, DifferentiableEquationNode):
                 print()
         child.expression.extend(node_new.expression)
+        child.rule = self
+        child.difficulty += self.weight
+        child.parent = parent
