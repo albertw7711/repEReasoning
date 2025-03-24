@@ -29,3 +29,11 @@ class Utils:
 
     @staticmethod
     def easy_skewed_randint(lower_bound, upper_bound):
+        values = list(range(lower_bound, upper_bound + 1))
+        if (upper_bound - lower_bound) < 4:
+            line = (upper_bound - lower_bound) // 2
+        else:
+            line = (upper_bound - lower_bound) // 4
+
+        # Assign higher weight to the first half
+        weights = [2 if i <= line else 1 for i in values]

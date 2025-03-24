@@ -47,3 +47,16 @@ class SAT_QBF_Move:
             parents=[formula],
             is_qbf=formula.is_qbf
         )
+    
+    def add_clause(self, formula):
+        """
+        Example input output:
+
+        Input:
+        CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2)
+
+
+        Output:
+        CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2) ∧ (¬x1 ∨ ¬x2)
+        """
+        vars_ = formula.variables
