@@ -60,3 +60,6 @@ class SAT_QBF_Move:
         CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2) ∧ (¬x1 ∨ ¬x2)
         """
         vars_ = formula.variables
+        assert len(vars_) > 1
+        # ensure distinct vars
+        v1, v2 = random.sample(vars_, 2)`

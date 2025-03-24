@@ -49,3 +49,6 @@ class SAT_QBF_Formula:
         return count
 
     def get_hardness(self):
+        return {
+            "num_vars": len(self.variables),
+            "num_clauses": len(self.cnf),
