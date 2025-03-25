@@ -66,3 +66,12 @@ class SAT_QBF_Generator(Generator):
             current = next_formula
 
             if len(curriculum.derivation_tree) == n_formulas:
+                return curriculum
+
+        # Step 3: Explore phase — stay at max hardness
+        while len(curriculum.derivation_tree) < n_formulas:
+            move = random.choice(["shuffle_clauses", "inject_alt_subformula", "rename_vars"])  # lateral moves
+            candidate = apply_move(current, move)
+
+            if candidate.to_str() in generated_hashes:
+                continue

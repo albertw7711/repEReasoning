@@ -58,3 +58,11 @@ class DifferentiationGenerator(Generator):
         if not fns:
             print("No fns defined")
             return None
+
+        node = DifferentiableEquationNode(
+            expression=[],
+            parent=None,
+            rule=None,
+            difficulty=0,
+            symbol=Symbol('x'),
+            product_term=-1,

@@ -52,3 +52,9 @@ class SAT_QBF_Formula:
         return {
             "num_vars": len(self.variables),
             "num_clauses": len(self.cnf),
+            "clause_len_avg": round(sum(len(c) for c in self.cnf) / len(self.cnf)),
+            "alt_depth": self.count_alternations(self.prefix),
+            "num_subformulas": len(self.parents)
+        }
+
+class SAT_QBF_Curriculum:
