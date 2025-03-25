@@ -58,3 +58,7 @@ class SAT_QBF_Formula:
         }
 
 class SAT_QBF_Curriculum:
+    def __init__(self,):
+        self.derivation_tree = []
+    
+    def append_node(self, formula):

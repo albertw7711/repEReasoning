@@ -63,3 +63,7 @@ class SAT_QBF_Move:
         assert len(vars_) > 1
         # ensure distinct vars
         v1, v2 = random.sample(vars_, 2)`
+
+        clause = [
+            random.choice(['', '¬']) + v1,
+            random.choice(['', '¬']) + v2

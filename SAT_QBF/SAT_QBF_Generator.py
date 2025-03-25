@@ -75,3 +75,7 @@ class SAT_QBF_Generator(Generator):
 
             if candidate.to_str() in generated_hashes:
                 continue
+            if candidate.get_hardness() != max_hardness:
+                continue
+
+            curriculum.append_node(candidate)
