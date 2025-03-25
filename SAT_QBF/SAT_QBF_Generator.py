@@ -82,3 +82,6 @@ class SAT_QBF_Generator(Generator):
             generated_hashes.add(candidate.to_str())
 
         return curriculum
+
+    
+    def generate_problem_prompt(self):

@@ -67,3 +67,6 @@ class SAT_QBF_Curriculum:
     def print_curriculum_tree(self):
         for i, formula in enumerate(self.derivation_tree):
             print(f"\nFormula {i}:")
+            formula.print_expression()
+            print("Hardness:", formula.get_hardness())
+

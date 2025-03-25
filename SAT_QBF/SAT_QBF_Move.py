@@ -68,3 +68,11 @@ class SAT_QBF_Move:
             random.choice(['', '¬']) + v1,
             random.choice(['', '¬']) + v2
         ]
+
+        new_cnf = formula.cnf + [clause]
+
+        return SAT_QBF_Formula(
+            variables=formula.variables,
+            prefix=formula.prefix,
+            cnf=new_cnf,
+            parents=[formula],
