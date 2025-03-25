@@ -67,3 +67,4 @@ class SAT_QBF_Move:
         clause = [
             random.choice(['', '¬']) + v1,
             random.choice(['', '¬']) + v2
+        ]

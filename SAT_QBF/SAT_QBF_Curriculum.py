@@ -62,3 +62,4 @@ class SAT_QBF_Curriculum:
         self.derivation_tree = []
     
     def append_node(self, formula):
+        self.derivation_tree.append(formula)
