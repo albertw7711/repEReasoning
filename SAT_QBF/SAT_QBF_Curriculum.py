@@ -63,3 +63,7 @@ class SAT_QBF_Curriculum:
     
     def append_node(self, formula):
         self.derivation_tree.append(formula)
+    
+    def print_curriculum_tree(self):
+        for i, formula in enumerate(self.derivation_tree):
+            print(f"\nFormula {i}:")

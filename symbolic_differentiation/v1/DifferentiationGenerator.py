@@ -67,3 +67,6 @@ class DifferentiationGenerator(Generator):
             symbol=Symbol('x'),
             product_term=-1,
             product_depth=0,
+            chain_depth=0,
+            sum_depth=0,
+            children=[],
