@@ -79,3 +79,4 @@ class DifferentiationGenerator(Generator):
             return node
         current_attempt = 0
         while not all_req_met and current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
+            current_rule_index = -1
