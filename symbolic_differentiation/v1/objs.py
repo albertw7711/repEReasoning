@@ -81,3 +81,4 @@ class DifferentiatingRule:
         else:
             if child_product_term == -1:
                 child_product_term = random.choice(range(len(parent.expression)))
+        if self.is_poly:

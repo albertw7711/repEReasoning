@@ -70,3 +70,4 @@ class DifferentiationGenerator(Generator):
             chain_depth=0,
             sum_depth=0,
             children=[],
+        )
