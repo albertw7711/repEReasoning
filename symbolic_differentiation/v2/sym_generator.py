@@ -79,3 +79,6 @@ class SymDifferentiationGenerator:
                 while num_product > 0:
                     p1_level = random.randint(0, int(math.log(current_level, 2))-1)
                     p2_level = int(math.log(current_level, 2))-1 - p1_level
+                    p1 = random.choice(self.generating_db[p1_level])
+                    p2 = random.choice(self.generating_db[p2_level])
+                    node = Node.create(p1, p2, 1)

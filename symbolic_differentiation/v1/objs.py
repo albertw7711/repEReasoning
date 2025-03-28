@@ -79,3 +79,5 @@ class DifferentiatingRule:
             child_product_depth = -1
             child_product_term = random.choice(range(len(parent.expression)))
         else:
+            if child_product_term == -1:
+                child_product_term = random.choice(range(len(parent.expression)))
