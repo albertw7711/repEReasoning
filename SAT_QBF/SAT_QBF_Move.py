@@ -76,3 +76,23 @@ class SAT_QBF_Move:
             prefix=formula.prefix,
             cnf=new_cnf,
             parents=[formula],
+            is_qbf=formula.is_qbf
+        )
+
+    def increase_clause_len(self, formula):
+        """
+        Example input output:
+
+        Input:
+        CNF: (x1 ∨ x2) ∧ (¬x1 ∨ x2) 
+
+        Output:
+        (x1 ∨ x2 ∨ x2) ∧ (¬x1 ∨ x2 ∨ ¬x1)
+        """
+        new_cnf = []
+        vars_ = formula.variables
+
+        for clause in formula.cnf:
+            # Extract vars used (strip negation)
+            used_vars = {lit.strip('¬') for lit in clause}
+

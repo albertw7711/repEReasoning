@@ -85,3 +85,5 @@ class SAT_QBF_Generator(Generator):
 
     
     def generate_problem_prompt(self):
+        pass
+    

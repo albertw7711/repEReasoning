@@ -70,3 +70,14 @@ class SAT_QBF_Curriculum:
             formula.print_expression()
             print("Hardness:", formula.get_hardness())
 
+
+class ReusableComponent:
+    def __init__(self, name, variables, prefix, cnf, is_qbf=True):
+        self.name = name
+        self.variables = variables
+        self.prefix = prefix
+        self.cnf = cnf
+        self.is_qbf = is_qbf
+
+
+# And in your generator:
