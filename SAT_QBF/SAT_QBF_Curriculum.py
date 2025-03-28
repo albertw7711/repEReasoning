@@ -81,3 +81,4 @@ class ReusableComponent:
 
 
 # And in your generator:
+self.reusable_lemmas = {
