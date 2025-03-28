@@ -85,3 +85,7 @@ class SymDifferentiationGenerator:
                     if (node.product_count > self.product_max) or (node.chain_count > self.chain_max):
                         continue
                     gen_levelc.append(node)
+                    num_product -= 1
+                while num_chain > 0:
+                    p1_level = 0
+                    p2_level = int(current_level/2)-1

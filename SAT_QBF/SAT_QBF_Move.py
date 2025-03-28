@@ -98,3 +98,8 @@ class SAT_QBF_Move:
 
             # Find variables not already in clause
             available_vars = [v for v in vars_ if v not in used_vars]
+
+            # If all vars are used already, we can't increase clause length
+            if not available_vars:
+                new_cnf.append(clause)
+                continue

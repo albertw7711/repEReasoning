@@ -71,3 +71,9 @@ class DifferentiationGenerator(Generator):
             sum_depth=0,
             children=[],
         )
+        node = sum_rule.apply(node)
+        num_sum -= 1
+        rule_reqs = [num_sum, product_depth, chain_depth]
+        all_req_met = all(v == 0 for v in rule_reqs)
+        if all_req_met:
+            return node
