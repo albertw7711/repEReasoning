@@ -84,3 +84,5 @@ class DifferentiatingRule:
         if self.is_poly:
             self.fns[-1] = parent.symbol ** random.randint(1, 10)
         mult_new = random.choice(self.fns)
+        if isinstance(mult_new, FunctionClass):
+            mult_new = mult_new(parent.symbol)
