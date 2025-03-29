@@ -103,3 +103,6 @@ class SAT_QBF_Move:
             if not available_vars:
                 new_cnf.append(clause)
                 continue
+
+            # Choose one unused var and random negation
+            new_var = random.choice(available_vars)
