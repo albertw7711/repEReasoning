@@ -89,3 +89,9 @@ class SymDifferentiationGenerator:
                 while num_chain > 0:
                     p1_level = 0
                     p2_level = int(current_level/2)-1
+                    p1 = random.choice(self.generating_db[p1_level])
+                    while not p1.expr.is_Function:
+                        p1 = random.choice(self.generating_db[p1_level])
+                    p2 = random.choice(self.generating_db[p2_level])
+                    node = Node.create(p1, p2, 2)
+                    if (node.product_count > self.product_max) or (node.chain_count > self.chain_max):

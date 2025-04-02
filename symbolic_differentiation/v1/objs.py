@@ -97,3 +97,10 @@ class DifferentiatingRule:
         child.parent = parent
         child.rule = child_rule
         child.difficulty = child_difficulty
+        child.product_term = child_product_term
+        child.product_depth = child_product_depth
+        parent.children.append(child)
+        return child
+
+    def chain_apply(self, parent, is_wide=false):
+        if is_wide:

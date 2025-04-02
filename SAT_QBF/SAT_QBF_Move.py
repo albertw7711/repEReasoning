@@ -112,3 +112,8 @@ class SAT_QBF_Move:
             new_clause = clause + [new_lit]
             random.shuffle(new_clause)
             new_cnf.append(new_clause)
+
+        return SAT_QBF_Formula(
+            variables=formula.variables,
+            prefix=formula.prefix,
+            cnf=new_cnf,
