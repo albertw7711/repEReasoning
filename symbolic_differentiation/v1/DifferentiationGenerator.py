@@ -93,3 +93,5 @@ class DifferentiationGenerator(Generator):
             all_req_met = all(v == 0 for v in rule_reqs)
         if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
             return None
+        node.derivative_degree = derivative_degree
+        return node

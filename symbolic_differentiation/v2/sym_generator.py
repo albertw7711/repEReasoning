@@ -101,3 +101,4 @@ class SymDifferentiationGenerator:
                 random.shuffle(gen_levelc)
             else:
                 num_sum = self.section_length*2
+                while num_sum > 0:
