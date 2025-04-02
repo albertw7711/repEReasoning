@@ -119,3 +119,4 @@ class SAT_QBF_Move:
             cnf=new_cnf,
             parents=[formula],
             is_qbf=formula.is_qbf
+        )

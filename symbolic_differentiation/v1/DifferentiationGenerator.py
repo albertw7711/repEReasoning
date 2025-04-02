@@ -90,3 +90,4 @@ class DifferentiationGenerator(Generator):
             node = current_rule.apply(node)
             rule_reqs[current_rule_index] -= 1
             current_attempt += 1
+            all_req_met = all(v == 0 for v in rule_reqs)
