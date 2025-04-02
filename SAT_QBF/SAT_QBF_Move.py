@@ -117,3 +117,4 @@ class SAT_QBF_Move:
             variables=formula.variables,
             prefix=formula.prefix,
             cnf=new_cnf,
+            parents=[formula],

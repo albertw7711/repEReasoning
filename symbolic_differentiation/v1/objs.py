@@ -104,3 +104,4 @@ class DifferentiatingRule:
 
     def chain_apply(self, parent, is_wide=false):
         if is_wide:
+            num_inner = random.randint(1, max(1, ceil(len(parent.expression)/2)))
