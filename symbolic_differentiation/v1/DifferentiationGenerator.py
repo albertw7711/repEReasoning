@@ -84,3 +84,8 @@ class DifferentiationGenerator(Generator):
                 current_rule_index = random.choice(range(len(rules)))
                 if rules[current_rule_index] is None:
                     continue
+                elif rule_reqs[current_rule_index] > 0:
+                    break
+            current_rule = rules[current_rule_index]
+            node = current_rule.apply(node)
+            rule_reqs[current_rule_index] -= 1

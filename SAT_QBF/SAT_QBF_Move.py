@@ -106,3 +106,9 @@ class SAT_QBF_Move:
 
             # Choose one unused var and random negation
             new_var = random.choice(available_vars)
+            new_lit = random.choice(['', '¬']) + new_var
+
+            # Append and shuffle (optional)
+            new_clause = clause + [new_lit]
+            random.shuffle(new_clause)
+            new_cnf.append(new_clause)

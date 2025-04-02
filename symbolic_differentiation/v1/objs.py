@@ -91,3 +91,9 @@ class DifferentiatingRule:
         child_expression[child_product_term] *= mult_new
         child_product_depth += 1
         child_rule = self
+        child_difficulty = parent.difficulty + child_rule.weight
+        child = deepcopy(parent)
+        child.expression = child_expression
+        child.parent = parent
+        child.rule = child_rule
+        child.difficulty = child_difficulty
