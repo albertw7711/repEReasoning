@@ -107,3 +107,4 @@ class DifferentiatingRule:
             num_inner = random.randint(1, max(1, ceil(len(parent.expression)/2)))
             inner_terms_indexes = random.sample(range(max(1, len(parent.expression)-1)), num_inner)
         else:
+            num_inner = len(parent.expression)

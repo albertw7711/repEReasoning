@@ -102,3 +102,4 @@ class SymDifferentiationGenerator:
             else:
                 num_sum = self.section_length*2
                 while num_sum > 0:
+                    p1_level = random.randint(0, current_level-1)

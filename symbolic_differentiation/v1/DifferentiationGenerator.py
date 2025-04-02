@@ -95,3 +95,4 @@ class DifferentiationGenerator(Generator):
             return None
         node.derivative_degree = derivative_degree
         return node
+
