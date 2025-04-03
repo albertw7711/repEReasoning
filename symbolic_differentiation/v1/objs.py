@@ -86,3 +86,8 @@ class DifferentiatingRule:
         mult_new = random.choice(self.fns)
         if isinstance(mult_new, FunctionClass):
             mult_new = mult_new(parent.symbol)
+        # mult_new *= Utils.generate_random_nonzero_fraction()
+        child_expression = deepcopy(parent.expression)
+        child_expression[child_product_term] *= mult_new
+        child_product_depth += 1
+        child_rule = self

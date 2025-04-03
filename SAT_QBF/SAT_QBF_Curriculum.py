@@ -82,3 +82,6 @@ class ReusableComponent:
 
 # And in your generator:
 self.reusable_lemmas = {
+    "sat_tautology": ReusableComponent("sat_tautology", ['p'], [('∃', 'p')], [['p', '¬p']]),
+    "qbf_swap": ReusableComponent("qbf_swap", ['x', 'y'], [('∀', 'x'), ('∃', 'y')], [['¬x', 'y'], ['x', '¬y']])
+}

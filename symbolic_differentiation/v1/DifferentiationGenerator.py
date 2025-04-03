@@ -81,3 +81,6 @@ class DifferentiationGenerator(Generator):
         while not all_req_met and current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
             current_rule_index = -1
             while true:
+                current_rule_index = random.choice(range(len(rules)))
+                if rules[current_rule_index] is None:
+                    continue
