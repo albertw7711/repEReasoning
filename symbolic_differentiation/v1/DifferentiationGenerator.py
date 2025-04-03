@@ -89,3 +89,4 @@ class DifferentiationGenerator(Generator):
             current_rule = rules[current_rule_index]
             node = current_rule.apply(node)
             rule_reqs[current_rule_index] -= 1
+            current_attempt += 1

@@ -97,3 +97,6 @@ class SymDifferentiationGenerator:
                     if (node.product_count > self.product_max) or (node.chain_count > self.chain_max):
                         continue
                     gen_levelc.append(node)
+                    num_chain -= 1
+                random.shuffle(gen_levelc)
+            else:
