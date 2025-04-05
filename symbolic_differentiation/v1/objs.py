@@ -109,3 +109,6 @@ class DifferentiatingRule:
         else:
             num_inner = len(parent.expression)
             inner_terms_indexes = range(len(parent.expression))
+        inner_terms = [parent.expression[i] for i in inner_terms_indexes]
+        other_terms = [term for term in parent.expression if term not in inner_terms]
+        if parent.product_term != -1:

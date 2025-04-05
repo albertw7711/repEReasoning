@@ -110,3 +110,8 @@ class DifferentiationGenerator(Generator):
         if is_rec_trig:
             fns.extend(deepcopy(REC_TRIGS))
         if is_inv_trig:
+            fns.extend(deepcopy(INV_TRIGS))
+        if is_inv_rec_trig:
+            fns.extend(deepcopy(INV_REC_TRIGS))
+        if is_exp:
+            fns.append(exp)

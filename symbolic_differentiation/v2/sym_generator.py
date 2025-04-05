@@ -118,3 +118,6 @@ class SymDifferentiationGenerator:
             self.generating_db.append(gen_levelc)
             self.output_db.append(out_levelc)
             current_level += 1
+
+    def print_curriculum(self):
+        for level in self.output_db:
