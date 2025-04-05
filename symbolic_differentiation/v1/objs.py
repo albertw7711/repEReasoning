@@ -114,3 +114,4 @@ class DifferentiatingRule:
         if parent.product_term != -1:
             parent_product_term = parent.expression[parent.product_term]
         else:
+            parent_product_term = None
