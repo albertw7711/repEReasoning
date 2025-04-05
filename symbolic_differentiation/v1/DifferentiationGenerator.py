@@ -116,3 +116,4 @@ class DifferentiationGenerator(Generator):
         if is_exp:
             fns.append(exp)
         if is_log:
+            fns.append(log)

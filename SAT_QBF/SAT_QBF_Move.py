@@ -133,3 +133,4 @@ class SAT_QBF_Move:
         ∀ x ∃ y : (¬x ∨ y) ∧ (x ∨ ¬y)
 
         Output
+        ∃ x1 ∃ x2 ∀ x3 ∃ x4 : 
