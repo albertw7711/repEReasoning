@@ -121,3 +121,5 @@ class SymDifferentiationGenerator:
 
     def print_curriculum(self):
         for level in self.output_db:
+            for node in level:
+                print(node.expr)

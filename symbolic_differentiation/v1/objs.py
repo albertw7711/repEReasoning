@@ -112,3 +112,4 @@ class DifferentiatingRule:
         inner_terms = [parent.expression[i] for i in inner_terms_indexes]
         other_terms = [term for term in parent.expression if term not in inner_terms]
         if parent.product_term != -1:
+            parent_product_term = parent.expression[parent.product_term]

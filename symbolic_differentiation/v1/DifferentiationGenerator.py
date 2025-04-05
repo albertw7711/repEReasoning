@@ -115,3 +115,4 @@ class DifferentiationGenerator(Generator):
             fns.extend(deepcopy(INV_REC_TRIGS))
         if is_exp:
             fns.append(exp)
+        if is_log:
