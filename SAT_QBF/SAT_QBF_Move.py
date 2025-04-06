@@ -120,3 +120,15 @@ class SAT_QBF_Move:
             parents=[formula],
             is_qbf=formula.is_qbf
         )
+    
+    def inject_reusable(self, formula, reusable):
+        """
+        Input output example:
+
+        Input
+        # Original formula
+        ∃ x1 ∃ x2 : (x1 ∨ ¬x2)
+
+        # Reusable component
+        ∀ x ∃ y : (¬x ∨ y) ∧ (x ∨ ¬y)
+

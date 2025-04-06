@@ -96,3 +96,17 @@ class DifferentiationGenerator(Generator):
         node.derivative_degree = derivative_degree
         return node
 
+    def generate_theorem_reuse(self,
+                         derivative_degree=1,
+                         num_sum: int=1, product_depth: int=0, chain_depth: int=0,
+                         is_poly=false, is_trig=false, is_rec_trig=false,
+                         is_inv_trig=false, is_inv_rec_trig=false, is_exp=false, is_log=false,
+                         is_product_wide=false, is_chain_wide=false,
+                         is_batch: bool=false):
+        discovered_nodes = self.generating_db
+        fns = []
+        if is_trig:
+            fns.extend(deepcopy(TRIGS))
+        if is_rec_trig:
+            fns.extend(deepcopy(REC_TRIGS))
+        if is_inv_trig:

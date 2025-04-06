@@ -103,3 +103,15 @@ class SymDifferentiationGenerator:
                 num_sum = self.section_length*2
                 while num_sum > 0:
                     p1_level = random.randint(0, current_level-1)
+                    p2_level = current_level-1 - p1_level
+                    p1 = random.choice(self.generating_db[p1_level])
+                    p2 = random.choice(self.generating_db[p2_level])
+                    node = Node.create(p1, p2, 0)
+                    if (node.product_count > self.product_max) or (node.chain_count > self.chain_max):
+                        continue
+                    gen_levelc.append(node)
+                    num_sum -= 1
+
+            out_levelc = random.sample(gen_levelc, k=self.section_length)
+            for node in out_levelc:
+                node.is_out = True
