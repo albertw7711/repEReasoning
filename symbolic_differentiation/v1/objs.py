@@ -125,3 +125,6 @@ class DifferentiatingRule:
         child = deepcopy(parent)
         child.expression = other_terms
         child.expression.append(f)
+        child.rule = self
+        child.difficulty += self.weight
+        if parent.product_term in inner_terms_indexes:

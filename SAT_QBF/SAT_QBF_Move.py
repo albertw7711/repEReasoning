@@ -154,3 +154,6 @@ class SAT_QBF_Move:
             for lit in clause:
                 is_neg = lit.startswith('¬')
                 var = lit.strip('¬')
+                renamed_lit = ('¬' if is_neg else '') + mapping[var]
+                renamed_clause.append(renamed_lit)
+            renamed_cnf.append(renamed_clause)
