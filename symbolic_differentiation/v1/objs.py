@@ -115,3 +115,6 @@ class DifferentiatingRule:
             parent_product_term = parent.expression[parent.product_term]
         else:
             parent_product_term = None
+        sum_inner = Add(*inner_terms)
+        # sum_inner *= Utils.generate_random_nonzero_fraction()
+        if self.is_poly:

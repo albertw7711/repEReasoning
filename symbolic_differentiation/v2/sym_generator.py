@@ -126,3 +126,6 @@ class SymDifferentiationGenerator:
             print("")
             print("######")
             print("")
+
+if __name__ == '__main__':
+    generator = SymDifferentiationGenerator(product_max=3, chain_max=3, section_length=5,

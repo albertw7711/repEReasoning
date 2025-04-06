@@ -117,3 +117,11 @@ class DifferentiationGenerator(Generator):
             fns.append(exp)
         if is_log:
             fns.append(log)
+        if is_poly:
+            fns.append(Symbol('x'))
+        sum_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.SUM, RULE_WEIGHTS[
+            ReverseDifferentiatingRuleType.SUM.value[0]], discovered_nodes, is_poly, True)
+        if is_product_wide:
+            product_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.WIDE_PRODUCT,
+                                               RULE_WEIGHTS[
+                                                   ReverseDifferentiatingRuleType.WIDE_PRODUCT.value[
