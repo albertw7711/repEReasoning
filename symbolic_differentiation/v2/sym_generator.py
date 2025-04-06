@@ -115,3 +115,6 @@ class SymDifferentiationGenerator:
             out_levelc = random.sample(gen_levelc, k=self.section_length)
             for node in out_levelc:
                 node.is_out = True
+            self.generating_db.append(gen_levelc)
+            self.output_db.append(out_levelc)
+            current_level += 1

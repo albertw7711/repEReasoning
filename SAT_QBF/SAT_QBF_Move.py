@@ -132,3 +132,4 @@ class SAT_QBF_Move:
         # Reusable component
         ∀ x ∃ y : (¬x ∨ y) ∧ (x ∨ ¬y)
 
+        Output
