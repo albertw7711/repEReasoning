@@ -130,3 +130,6 @@ class DifferentiatingRule:
         if parent.product_term in inner_terms_indexes:
             child.product_term = len(child.expression)-1
         else:
+            if parent.product_term != -1:
+                child.product_term = child.expression.index(parent_product_term)
+        child.parent = parent

@@ -130,3 +130,4 @@ class DifferentiationGenerator(Generator):
             product_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.PRODUCT, RULE_WEIGHTS[
                 ReverseDifferentiatingRuleType.PRODUCT.value[0]], fns, is_poly)
         if is_chain_wide:
+            chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.WIDE_CHAIN,

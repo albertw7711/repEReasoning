@@ -159,3 +159,4 @@ class SAT_QBF_Move:
             renamed_cnf.append(renamed_clause)
 
         # Step 3: Rename reusable prefix
+        renamed_prefix = [(q, mapping[v]) for q, v in reusable.prefix]
