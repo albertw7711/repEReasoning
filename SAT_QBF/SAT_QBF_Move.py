@@ -157,3 +157,5 @@ class SAT_QBF_Move:
                 renamed_lit = ('¬' if is_neg else '') + mapping[var]
                 renamed_clause.append(renamed_lit)
             renamed_cnf.append(renamed_clause)
+
+        # Step 3: Rename reusable prefix

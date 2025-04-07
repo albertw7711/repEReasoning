@@ -128,3 +128,5 @@ class DifferentiatingRule:
         child.rule = self
         child.difficulty += self.weight
         if parent.product_term in inner_terms_indexes:
+            child.product_term = len(child.expression)-1
+        else:
