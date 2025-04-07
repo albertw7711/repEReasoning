@@ -129,3 +129,6 @@ class SymDifferentiationGenerator:
 
 if __name__ == '__main__':
     generator = SymDifferentiationGenerator(product_max=3, chain_max=3, section_length=5,
+                                            is_poly=true, is_trig=true, is_exp=true)
+    generator.generate_curriculum()
+    generator.print_curriculum()

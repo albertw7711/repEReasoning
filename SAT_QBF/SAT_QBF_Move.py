@@ -134,3 +134,23 @@ class SAT_QBF_Move:
 
         Output
         ∃ x1 ∃ x2 ∀ x3 ∃ x4 : 
+        (x1 ∨ ¬x2) ∧ (¬x3 ∨ x4) ∧ (x3 ∨ ¬x4)
+        """
+        # Step 1: Create new variable names
+        existing_vars = set(formula.variables)
+        mapping = {}
+        new_vars = []
+
+        for old_var in reusable.variables:
+            base = old_var.strip('x') if old_var.startswith('x') else old_var
+            new_var = f"x{len(existing_vars) + len(mapping) + 1}"
+            mapping[old_var] = new_var
+            new_vars.append(new_var)
+
+        # Step 2: Rename reusable CNF
+        renamed_cnf = []
+        for clause in reusable.cnf:
+            renamed_clause = []
+            for lit in clause:
+                is_neg = lit.startswith('¬')
+                var = lit.strip('¬')

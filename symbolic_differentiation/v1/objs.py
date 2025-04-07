@@ -118,3 +118,10 @@ class DifferentiatingRule:
         sum_inner = Add(*inner_terms)
         # sum_inner *= Utils.generate_random_nonzero_fraction()
         if self.is_poly:
+            self.fns[-1] = parent.symbol ** random.randint(1, 10)
+        f = random.choice(self.fns)
+        if isinstance(f, FunctionClass):
+            f = f(sum_inner)
+        child = deepcopy(parent)
+        child.expression = other_terms
+        child.expression.append(f)
