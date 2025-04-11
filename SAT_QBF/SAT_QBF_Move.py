@@ -160,3 +160,9 @@ class SAT_QBF_Move:
 
         # Step 3: Rename reusable prefix
         renamed_prefix = [(q, mapping[v]) for q, v in reusable.prefix]
+
+        # Step 4: Merge
+        new_vars_all = formula.variables + new_vars
+        new_cnf = formula.cnf + renamed_cnf
+        new_prefix = formula.prefix + renamed_prefix
+

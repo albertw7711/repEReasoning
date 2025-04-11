@@ -133,3 +133,9 @@ class DifferentiatingRule:
             if parent.product_term != -1:
                 child.product_term = child.expression.index(parent_product_term)
         child.parent = parent
+        parent.children.append(child)
+        return child
+
+    def apply(self, parent):
+        if not parent.expression:
+            if self.is_reuse:
