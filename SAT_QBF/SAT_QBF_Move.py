@@ -166,3 +166,17 @@ class SAT_QBF_Move:
         new_cnf = formula.cnf + renamed_cnf
         new_prefix = formula.prefix + renamed_prefix
 
+        return SAT_QBF_Formula(
+            variables=new_vars_all,
+            prefix=new_prefix,
+            cnf=new_cnf,
+            parents=[formula, reusable],
+            is_qbf=formula.is_qbf
+        )
+    def extend_prefix(self, formula):
+        """
+        Extends the prefix by adding a new variable under an alternating quantifier.
+
+        Input:
+        ∃ x1 ∃ x2 : (x1 ∨ ¬x2)
+

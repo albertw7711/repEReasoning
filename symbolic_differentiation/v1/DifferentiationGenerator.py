@@ -135,3 +135,23 @@ class DifferentiationGenerator(Generator):
                                                  ReverseDifferentiatingRuleType.WIDE_CHAIN.value[
                                                      0]], fns, is_poly)
         else:
+            chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.CHAIN, RULE_WEIGHTS[
+                ReverseDifferentiatingRuleType.CHAIN.value[0]], fns, is_poly)
+        rules = [sum_rule, product_rule, chain_rule]
+        if not fns:
+            print("No fns defined")
+            return None
+
+        # initialize using a random node from the discovered db
+        current_attempt = 0
+        sub_node_exists = False
+        while current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
+            node = random.choice(discovered_nodes)
+            if (node.sum_depth <= num_sum
+                and node.product_depth <= product_depth
+                and node.chain_depth <= chain_depth):
+                sub_node_exists = True
+                break
+            current_attempt += 1
+            if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
+                break

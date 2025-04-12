@@ -139,3 +139,25 @@ class DifferentiatingRule:
     def apply(self, parent):
         if not parent.expression:
             if self.is_reuse:
+                return self.sum_apply_reuse(parent)
+            else:
+                return self.sum_apply_native(parent)
+        match self.rule_type:
+            case ReverseDifferentiatingRuleType.SUM:
+                if self.is_reuse:
+                    return self.sum_apply_reuse(parent)
+                else:
+                    return self.sum_apply_native(parent)
+            case ReverseDifferentiatingRuleType.PRODUCT:
+                return self.product_apply(parent)
+            case ReverseDifferentiatingRuleType.WIDE_PRODUCT:
+                return self.product_apply(parent, true)
+            case ReverseDifferentiatingRuleType.CHAIN:
+                return self.chain_apply(parent)
+            case ReverseDifferentiatingRuleType.WIDE_CHAIN:
+                return self.chain_apply(parent, true)
+            case _:
+                return None
+
+class DifferentiableEquationNode:
+    def __init__(self,
