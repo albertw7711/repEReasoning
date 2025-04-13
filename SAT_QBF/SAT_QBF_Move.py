@@ -180,3 +180,35 @@ class SAT_QBF_Move:
         Input:
         ∃ x1 ∃ x2 : (x1 ∨ ¬x2)
 
+        Output:
+        ∃ x1 ∃ x2 ∀ x3 : (x1 ∨ ¬x2) ∧ (¬x2 ∨ x3)
+        """
+        if not formula.is_qbf:
+            # SAT doesn't have quantifier alternation — skip this move
+            return formula
+
+        # Step 1: Determine the new quantifier (alternate from last)
+        last_q = formula.prefix[-1][0] if formula.prefix else '∃'
+        new_q = '∀' if last_q == '∃' else '∃'
+
+        # Step 2: Generate new variable
+        new_var = f"x{len(formula.variables) + 1}"
+        new_vars = formula.variables + [new_var]
+        new_prefix = formula.prefix + [(new_q, new_var)]
+
+        # Step 3: Add a clause involving the new variable
+        # Choose an existing variable to tie it back logically
+        existing_var = random.choice(formula.variables)
+        new_clause = [
+            random.choice(['', '¬']) + existing_var,
+            random.choice(['', '¬']) + new_var
+        ]
+        new_cnf = formula.cnf + [new_clause]
+
+        return SAT_QBF_Formula(
+            variables=new_vars,
+            prefix=new_prefix,
+            cnf=new_cnf,
+            parents=[formula],
+            is_qbf=True
+        )

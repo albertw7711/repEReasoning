@@ -161,3 +161,22 @@ class DifferentiatingRule:
 
 class DifferentiableEquationNode:
     def __init__(self,
+                 expression: List[Expr],
+                 parent: Optional["DifferentiableEquationNode"],
+                 rule: Optional["DifferentiatingRule"],
+                 difficulty: int,
+                 symbol: Symbol,
+                 product_term=-1,
+                 product_depth=0,
+                 chain_depth=0,
+                 sum_depth=0,
+                 derivative_degree=1,
+                 children=Optional[list["DifferentiableEquationNode"]]):
+        self.expression = expression
+        self.parent = parent
+        self.rule = rule
+        self.children = children or []
+        self.difficulty = difficulty
+        self.symbol = symbol
+        self.product_term = product_term
+        self.product_depth = product_depth

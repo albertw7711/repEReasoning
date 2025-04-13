@@ -155,3 +155,26 @@ class DifferentiationGenerator(Generator):
             current_attempt += 1
             if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
                 break
+        if not sub_node_exists:
+            node = DifferentiableEquationNode(
+                expression=[],
+                parent=None,
+                rule=None,
+                difficulty=0,
+                symbol=Symbol('x'),
+                product_term=-1,
+                product_depth=0,
+                chain_depth=0,
+                sum_depth=0,
+                children=[],
+            )
+            sum_rule.is_reuse = False
+            sum_rule.fns = fns
+            node = sum_rule.apply(node)
+            sum_rule.is_reuse = True
+            sum_rule.fns = discovered_nodes
+            num_sum -= 1
+        remaining_reqs = [num_sum-node.sum_depth, product_depth-node.product_depth,
+                          chain_depth-node.chain_depth]
+        all_req_met = all(v == 0 for v in remaining_reqs)
+        current_attempt = 0
