@@ -208,3 +208,8 @@ if __name__ == '__main__':
     child_node6 = product_rule.apply(child_node5)
     """
     """
+    chain_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.CHAIN, RULE_WEIGHTS[
+        ReverseDifferentiatingRuleType.CHAIN.value[0]])
+    child_node1 = chain_rule.sum_apply(test_node)
+    child_node2 = chain_rule.sum_apply(child_node1)
+    child_node3 = chain_rule.sum_apply(child_node2)
