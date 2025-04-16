@@ -178,3 +178,12 @@ class DifferentiationGenerator(Generator):
                           chain_depth-node.chain_depth]
         all_req_met = all(v == 0 for v in remaining_reqs)
         current_attempt = 0
+        while sub_node_exists and all_req_met and current_attempt < \
+                DifferentiationGenerator.ATTEMPT_LIMIT:
+            current_rule_index = -1
+            while true:
+                current_rule_index = random.choice(range(len(rules)))
+                if rules[current_rule_index] is None:
+                    continue
+                elif remaining_reqs[current_rule_index] > 0:
+                    break

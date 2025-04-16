@@ -180,3 +180,12 @@ class DifferentiableEquationNode:
         self.symbol = symbol
         self.product_term = product_term
         self.product_depth = product_depth
+        self.chain_depth = chain_depth
+        self.sum_depth = sum_depth
+        self.derivative_degree = derivative_degree
+
+
+if __name__ == '__main__':
+    test_node = DifferentiableEquationNode(
+        expression=[],
+        parent=None,
