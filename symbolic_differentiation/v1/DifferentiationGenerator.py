@@ -202,3 +202,6 @@ class DifferentiationGenerator(Generator):
             if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
                 break
             if current_rule_index != 0:
+                remaining_reqs[current_rule_index] -= 1
+            else:
+                remaining_reqs[current_rule_index] = num_sum - node.sum_depth
