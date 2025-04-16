@@ -193,3 +193,12 @@ if __name__ == '__main__':
         difficulty=0,
         symbol=Symbol('x'),
         product_term=-1,
+        product_depth=0,
+        children=[]
+    )
+    """
+    product_rule = DifferentiatingRule(ReverseDifferentiatingRuleType.PRODUCT, RULE_WEIGHTS[
+        ReverseDifferentiatingRuleType.PRODUCT.value[0]])
+    child_node1 = product_rule.apply(test_node)
+    child_node2 = product_rule.apply(child_node1)
+    child_node3 = product_rule.apply(child_node2)

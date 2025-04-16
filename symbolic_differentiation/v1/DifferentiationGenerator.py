@@ -192,3 +192,13 @@ class DifferentiationGenerator(Generator):
                 current_attempt = 0
                 while current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
                     node_tmp = deepcopy(node)
+                    node = current_rule.apply(node)
+                    if (node.sum_depth <= num_sum
+                            and node.product_depth <= product_depth
+                            and node.chain_depth <= chain_depth):
+                        break
+                    node = node_tmp
+                    current_attempt += 1
+            if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
+                break
+            if current_rule_index != 0:
