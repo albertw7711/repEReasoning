@@ -189,3 +189,7 @@ if __name__ == '__main__':
     test_node = DifferentiableEquationNode(
         expression=[],
         parent=None,
+        rule=None,
+        difficulty=0,
+        symbol=Symbol('x'),
+        product_term=-1,

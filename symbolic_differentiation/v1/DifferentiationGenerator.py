@@ -187,3 +187,8 @@ class DifferentiationGenerator(Generator):
                     continue
                 elif remaining_reqs[current_rule_index] > 0:
                     break
+            current_rule = rules[current_rule_index]
+            if current_rule.rule_type == ReverseDifferentiatingRuleType.SUM:
+                current_attempt = 0
+                while current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
+                    node_tmp = deepcopy(node)
