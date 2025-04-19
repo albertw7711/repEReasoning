@@ -210,3 +210,10 @@ class DifferentiationGenerator(Generator):
 
         # start padding
         sum_rule.is_reuse = False
+        sum_rule.fns = fns
+        all_req_met = all(v == 0 for v in remaining_reqs)
+        if all_req_met:
+            return node
+        current_attempt = 0
+        while not all_req_met and current_attempt < DifferentiationGenerator.ATTEMPT_LIMIT:
+            current_rule_index = -1
