@@ -220,3 +220,14 @@ class DifferentiationGenerator(Generator):
             while true:
                 current_rule_index = random.choice(range(len(rules)))
                 if rules[current_rule_index] is None:
+                    continue
+                elif remaining_reqs[current_rule_index] > 0:
+                    break
+            current_rule = rules[current_rule_index]
+            node = current_rule.apply(node)
+            remaining_reqs[current_rule_index] -= 1
+            current_attempt += 1
+            all_req_met = all(v == 0 for v in remaining_reqs)
+        if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
+            return None
+        node.derivative_degree = derivative_degree

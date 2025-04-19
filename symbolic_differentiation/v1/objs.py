@@ -230,3 +230,7 @@ if __name__ == '__main__':
     child_node1 = product_rule.sum_apply(child_node1)
     child_node2 = product_rule.apply(child_node1)
     child_node3 = chain_rule.apply(child_node2)
+    child_node4 = product_rule.apply(child_node3)
+    child_node5 = chain_rule.apply(child_node4)
+    print()
+    """
