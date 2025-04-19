@@ -231,3 +231,13 @@ class DifferentiationGenerator(Generator):
         if current_attempt == DifferentiationGenerator.ATTEMPT_LIMIT:
             return None
         node.derivative_degree = derivative_degree
+        return node
+
+    def generate_curriculum(self,
+                            max_deri_degree=1,
+                            max_num_sum: int=1, max_product_depth: int=0, max_chain_depth: int=0,
+                            num_section=1, section_length=10, is_batch=false):
+        reqs_list = []
+        for _ in range(num_section):
+            reqs = [Utils.easy_skewed_randint(1, max_deri_degree),
+                    Utils.easy_skewed_randint(1, max_num_sum),
