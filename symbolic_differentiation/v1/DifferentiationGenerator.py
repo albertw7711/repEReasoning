@@ -246,3 +246,10 @@ class DifferentiationGenerator(Generator):
             fns_selection = np.random.choice(range(DifferentiationGenerator.NUM_FN_TYPE),
                                              size=Utils.easy_skewed_randint(1, DifferentiationGenerator.NUM_FN_TYPE),
                                              replace=False,
+                                             p=np.array(DifferentiationGenerator.FN_WEIGHTS)/sum(
+                                                 DifferentiationGenerator.FN_WEIGHTS))
+            fns_toggle = [0] * DifferentiationGenerator.NUM_FN_TYPE
+            for i in range(len(fns_toggle)):
+                if i in fns_selection:
+                    fns_toggle[i] = 1
+            if all(f == 0 for f in fns_toggle):
