@@ -241,3 +241,8 @@ class DifferentiationGenerator(Generator):
         for _ in range(num_section):
             reqs = [Utils.easy_skewed_randint(1, max_deri_degree),
                     Utils.easy_skewed_randint(1, max_num_sum),
+                    Utils.easy_skewed_randint(0, max_product_depth),
+                    Utils.easy_skewed_randint(0, max_chain_depth)]
+            fns_selection = np.random.choice(range(DifferentiationGenerator.NUM_FN_TYPE),
+                                             size=Utils.easy_skewed_randint(1, DifferentiationGenerator.NUM_FN_TYPE),
+                                             replace=False,
