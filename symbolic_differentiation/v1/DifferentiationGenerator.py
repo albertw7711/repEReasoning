@@ -326,3 +326,4 @@ class DifferentiationGenerator(Generator):
         deri_degree -= 1
         for _ in range(deri_degree):
             label = diff(label, problem_symbol)
+        return label
