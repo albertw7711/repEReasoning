@@ -269,3 +269,36 @@ class DifferentiationGenerator(Generator):
             for _ in range(num_native):
                 try:
                     theorem_new = (self.generate_theorem_native(*reqs))
+                except:
+                    theorem_new = None
+                finally:
+                    self.generating_db.append(deepcopy(theorem_new))
+            for _ in range(num_reuse):
+                try:
+                    theorem_new = (self.generate_theorem_reuse(*reqs))
+                except:
+                    theorem_new = None
+                finally:
+                    self.generating_db.append(deepcopy(theorem_new))
+        for i in range(len(self.generating_db)):
+            thm = self.generating_db[i]
+            if not thm:
+                reqs = [1, 1]
+                reqs.extend([0]*11)
+                reqs[random.randint(4, DifferentiationGenerator.NUM_FN_TYPE+3)] = 1
+                theorem_new = self.generate_theorem_native(*reqs)
+                self.generating_db[i] = deepcopy(theorem_new)
+
+    def generate_training_db(self, max_deri_degree=1,
+                            max_num_sum: int=1, max_product_depth: int=0, max_chain_depth: int=0,
+                            num_section=1, section_length=10, is_batch=false):
+        self.generate_curriculum(max_deri_degree, max_num_sum, max_product_depth, max_chain_depth, num_section, section_length, is_batch)
+        for node in self.generating_db:
+            if not isinstance(node, DifferentiableEquationNode):
+                node = DifferentiableEquationNode(
+                    expression=[node],
+                    parent=None,
+                    rule=None,
+                    difficulty=0,
+                    symbol=list(node.free_symbols)[0],
+                    product_term=-1,
