@@ -323,3 +323,4 @@ class DifferentiationGenerator(Generator):
 
     def get_problem_label(self, problem_expr, problem_symbol, deri_degree):
         label = diff(problem_expr, problem_symbol)
+        deri_degree -= 1
