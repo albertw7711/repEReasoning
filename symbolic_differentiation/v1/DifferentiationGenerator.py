@@ -314,3 +314,4 @@ class DifferentiationGenerator(Generator):
                 label = self.get_problem_label(node_expr, node.symbol, node.derivative_degree)
             except:
                 print("Cannot differentiate " + str(node_expr))
+                continue
