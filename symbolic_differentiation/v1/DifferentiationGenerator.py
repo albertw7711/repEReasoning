@@ -315,3 +315,8 @@ class DifferentiationGenerator(Generator):
             except:
                 print("Cannot differentiate " + str(node_expr))
                 continue
+
+        return
+
+    def get_problem_prompt(self):
+        pass
