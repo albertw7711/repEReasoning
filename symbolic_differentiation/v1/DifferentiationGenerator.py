@@ -302,3 +302,15 @@ class DifferentiationGenerator(Generator):
                     difficulty=0,
                     symbol=list(node.free_symbols)[0],
                     product_term=-1,
+                    product_depth=0,
+                    chain_depth=0,
+                    sum_depth=0,
+                    derivative_degree=1,
+                    children=[],
+                )
+            node_expr = Add(*node.expression)
+            prompt = ""
+            try:
+                label = self.get_problem_label(node_expr, node.symbol, node.derivative_degree)
+            except:
+                print("Cannot differentiate " + str(node_expr))
