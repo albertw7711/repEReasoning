@@ -253,3 +253,19 @@ class DifferentiationGenerator(Generator):
                 if i in fns_selection:
                     fns_toggle[i] = 1
             if all(f == 0 for f in fns_toggle):
+                fns_toggle[random.randint(0, len(fns_toggle) - 1)] = 1
+            wide_toggle = [random.randint(0, 1) for _ in range(
+                DifferentiationGenerator.NUM_WIDE_TYPE)]
+            reqs.extend(fns_toggle)
+            reqs.extend(wide_toggle)
+            reqs_list.append(reqs)
+        reqs_list = Utils.sort_by_weighted_sum(reqs_list, DifferentiationGenerator.ARG_WEIGHTS)
+        for reqs in reqs_list:
+            if self.generating_db:
+                num_native = random.randint(1, num_section-1)
+            else:
+                num_native = section_length
+            num_reuse = section_length - num_native
+            for _ in range(num_native):
+                try:
+                    theorem_new = (self.generate_theorem_native(*reqs))
