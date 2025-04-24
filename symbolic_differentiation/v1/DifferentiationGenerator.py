@@ -327,3 +327,11 @@ class DifferentiationGenerator(Generator):
         for _ in range(deri_degree):
             label = diff(label, problem_symbol)
         return label
+
+if __name__ == '__main__':
+    generator = DifferentiationGenerator()
+    generator.generate_training_db(2,
+                                  5, 2, 2,
+                                  3, 5)
+    print()
+
